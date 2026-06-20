@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雷竞技 · 产品说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f2f4f6;
+      color: #1e2a35;
+      line-height: 1.6;
+      padding: 2rem 1.2rem;
+    }
+
+    .page {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* header */
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem 1.8rem;
+      margin-bottom: 2.5rem;
+      background: #ffffffdd;
+      backdrop-filter: blur(2px);
+      border-radius: 28px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e6eaef;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #14212b;
+    }
+
+    .hero .sub {
+      margin-top: 0.8rem;
+      color: #4b5a68;
+      font-weight: 400;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.05rem;
+      border-top: 1px solid #dce2e9;
+      padding-top: 1.2rem;
+    }
+
+    .hero .sub a {
+      color: #1d4e6f;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dashed #90aec4;
+    }
+
+    .hero .sub a:hover {
+      border-bottom-style: solid;
+      color: #0a3144;
+    }
+
+    /* cards grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.6rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 22px;
+      border: 1px solid #e1e7ed;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.15s ease, transform 0.1s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+      transform: translateY(-1px);
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      font-weight: 550;
+      letter-spacing: 0.005em;
+      margin-bottom: 0.7rem;
+      color: #1b2a38;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid #eef3f8;
+    }
+
+    .card p, .card li {
+      color: #2f4051;
+      font-size: 0.96rem;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card ul li {
+      padding: 0.3rem 0 0.3rem 1.2rem;
+      position: relative;
+    }
+
+    .card ul li::before {
+      content: "·";
+      position: absolute;
+      left: 0.2rem;
+      color: #5d7b97;
+      font-weight: 700;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e2e9f1;
+      color: #1b384f;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.2rem 0.65rem;
+      border-radius: 40px;
+      margin-right: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* highlight row */
+    .highlight-bar {
+      background: #f7fafd;
+      border: 1px solid #dce4ed;
+      border-radius: 30px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .highlight-bar .stat {
+      flex: 1 1 140px;
+    }
+
+    .highlight-bar .stat strong {
+      display: block;
+      font-size: 1.1rem;
+      color: #0e2d44;
+    }
+
+    .highlight-bar .stat span {
+      font-size: 0.85rem;
+      color: #4f667b;
+    }
+
+    .highlight-bar .link-unit {
+      background: white;
+      padding: 0.3rem 1rem 0.3rem 1.2rem;
+      border-radius: 60px;
+      border: 1px solid #cbd7e3;
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+      font-size: 0.9rem;
+    }
+
+    .highlight-bar .link-unit a {
+      color: #10354c;
+      text-decoration: none;
+      font-weight: 520;
+    }
+
+    .highlight-bar .link-unit a:hover {
+      text-decoration: underline;
+    }
+
+    /* faq / use hint */
+    .faq-mini {
+      background: white;
+      border-radius: 24px;
+      border: 1px solid #e5eaf0;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .faq-mini h3 {
+      font-weight: 540;
+      font-size: 1.15rem;
+      margin-bottom: 1.2rem;
+      color: #1f3546;
+    }
+
+    .faq-item {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #eaeff5;
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 530;
+      color: #1d384e;
+      margin-bottom: 0.15rem;
+    }
+
+    .faq-item p {
+      color: #3f566b;
+      font-size: 0.93rem;
+    }
+
+    .faq-item a {
+      color: #1b4a6b;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* footer */
+    .footer-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #657b8c;
+      padding: 1.8rem 0.5rem 0.5rem;
+      border-top: 1px solid #dae1e9;
+      margin-top: 1.5rem;
+    }
+
+    .footer-note a {
+      color: #2c5777;
+      text-decoration: none;
+    }
+
+    .footer-note a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 1.5rem 0.8rem; }
+      .hero h1 { font-size: 1.9rem; }
+      .card { padding: 1.4rem 1.2rem; }
+      .highlight-bar { flex-direction: column; align-items: stretch; text-align: center; }
+      .highlight-bar .link-unit { justify-content: center; }
+      .faq-mini { padding: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero -->
+  <div class="hero">
+    <h1>雷竞技 · 产品说明</h1>
+    <div class="sub">
+      聚焦竞技内容平台 · 数据与体验并重<br>
+      基于对赛事的长期追踪，<a href="https://asia-leigame.com">雷竞技</a> 提供结构化的信息呈现与稳定的服务支持。
+    </div>
+  </div>
+
+  <!-- 摘要 + 亮点卡片 -->
+  <div class="grid">
+    <div class="card">
+      <h2>▍ 产品摘要</h2>
+      <p><span class="badge">竞技</span><span class="badge">聚合</span></p>
+      <p>雷竞技是一套围绕竞技赛事打造的信息与交互系统。覆盖主流项目的数据流、赛程结构、实时变动与基础分析，以模块化页面降低信息噪音，让使用者更快定位关键节点。</p>
+      <p style="margin-top: 0.6rem;">从赛事排期到历史回溯，每个单元均按竞技逻辑组织，不堆砌无关元素。</p>
+    </div>
+
+    <div class="card">
+      <h2>▍ 核心亮点</h2>
+      <ul>
+        <li>多项目并行架构，支持同时追踪不同赛区的进度</li>
+        <li>轻量级界面，无冗余弹窗或强推内容</li>
+        <li>数据更新频率经过平衡，兼顾即时性与系统稳定性</li>
+        <li>账户体系简洁，可保存偏好设置与常用赛事</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 使用建议 + 场景 -->
+  <div class="grid">
+    <div class="card">
+      <h2>▍ 使用建议</h2>
+      <ul>
+        <li>建议先浏览项目总览，了解各联赛的分组与赛历</li>
+        <li>开启「关注列表」功能以跟踪特定队伍或选手</li>
+        <li>利用历史数据模块对比近期表现，辅助判断</li>
+        <li>定期清理缓存可保持界面响应流畅</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>▍ 适用场景</h2>
+      <ul>
+        <li>日常赛况跟踪（午间/晚间时段）</li>
+        <li>赛事回看与数据复盘</li>
+        <li>多项目跨联赛对比</li>
+        <li>信息参考与基础分析</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 可信提示 + 链接 -->
+  <div class="highlight-bar">
+    <div class="stat">
+      <strong>信息原则</strong>
+      <span>可验证 · 可追溯 · 无夸饰</span>
+    </div>
+    <div class="stat">
+      <strong>维护周期</strong>
+      <span>按赛事日历更新</span>
+    </div>
+    <div class="link-unit">
+      <span>了解平台 → </span>
+      <a href="https://asia-leigame.com">雷竞技</a>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-mini">
+    <h3>▍ 常见说明</h3>
+    <div class="faq-item">
+      <strong>数据来源是否可靠？</strong>
+      <p>雷竞技 整合公开赛事信息与授权数据接口，经过多节点校对。具体精度因项目而异，可在详情页查看数据标注。</p>
+    </div>
+    <div class="faq-item">
+      <strong>是否需要注册？</strong>
+      <p>浏览基础信息无需注册。部分个性化功能（如关注列表、历史记录）需要创建账号。注册流程仅需邮箱或手机号。</p>
+    </div>
+    <div class="faq-item">
+      <strong>移动端兼容性如何？</strong>
+      <p>界面适配主流屏幕尺寸，建议使用系统自带浏览器或 Chrome/Safari 以获得最佳布局。小程序版本正在开发中。</p>
+    </div>
+    <div class="faq-item">
+      <strong>怎样开始使用？</strong>
+      <p>直接访问 <a href="https://asia-leigame.com">雷竞技</a> 即可查看当前热门赛事，或通过顶部导航切换项目类型。</p>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="footer-note">
+    <p>© 产品说明页 · 基于实际服务内容编制 · 保持客观</p>
+    <p style="margin-top: 0.3rem;">如有疑问请通过平台内反馈通道联系 · 版本 2025.03</p>
+  </div>
+
+</div>
+</body>
+</html>
