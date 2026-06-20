@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pg电子 · 资料索引与场景说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f8f6f2;
+      font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+      color: #2e2b28;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      background-color: #fefcfa;
+      border-radius: 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      padding: 2rem 2.5rem 3rem;
+    }
+
+    /* 导航 */
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0 1.5rem;
+      border-bottom: 1px solid #e2dbd0;
+      margin-bottom: 2rem;
+    }
+
+    .nav-logo {
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      color: #7f6e5a;
+      font-weight: normal;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4d443b;
+      font-size: 1rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: #b8a288;
+    }
+
+    .nav-links a.highlight {
+      font-weight: 500;
+      color: #7f5e3a;
+      border-bottom: 1px solid #cbb295;
+    }
+
+    /* 标题与正文 */
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: #3e352c;
+      margin-bottom: 0.3rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin: 2rem 0 1rem;
+      color: #4b3e33;
+      border-left: 4px solid #d9cbb9;
+      padding-left: 0.9rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin: 1.5rem 0 0.6rem;
+      color: #5f5243;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      text-align: justify;
+    }
+
+    a {
+      color: #7a623f;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #d9cbbe;
+    }
+
+    a:hover {
+      color: #4d3925;
+      text-decoration-color: #9b876b;
+    }
+
+    /* 引用提示框 */
+    .note-box {
+      background-color: #f2ede4;
+      border-left: 6px solid #b4a18b;
+      padding: 1.2rem 1.6rem;
+      margin: 1.8rem 0;
+      border-radius: 0 16px 16px 0;
+      color: #3d352d;
+      font-style: normal;
+    }
+
+    .note-box strong {
+      color: #5d4a34;
+    }
+
+    .tip {
+      background-color: #f0ebe2;
+      border-radius: 24px;
+      padding: 1.3rem 1.8rem;
+      margin: 2rem 0 1.5rem;
+      border: 1px solid #dfd6c9;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    .tip h4 {
+      font-weight: 500;
+      font-size: 1.1rem;
+      color: #5b4b39;
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-item {
+      margin: 1rem 0 0.4rem;
+    }
+
+    .faq-question {
+      font-weight: 500;
+      color: #4d3f30;
+    }
+
+    .faq-answer {
+      margin-left: 0.8rem;
+      color: #3e3832;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e5ddd1;
+      margin: 2rem 0;
+    }
+
+    .footer-note {
+      margin-top: 2.5rem;
+      font-size: 0.9rem;
+      color: #7b7166;
+      text-align: center;
+      border-top: 1px solid #e8e0d4;
+      padding-top: 1.8rem;
+    }
+
+    /* 场景卡片 */
+    .scene-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .scene-card {
+      background: #fbf9f5;
+      border: 1px solid #e7dfd3;
+      border-radius: 20px;
+      padding: 1.5rem 1.3rem 1.3rem;
+      transition: box-shadow 0.15s;
+    }
+
+    .scene-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+
+    .scene-card h4 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 0.6rem;
+      color: #4b3f33;
+      border-bottom: 1px dashed #d9cfbf;
+      padding-bottom: 0.3rem;
+    }
+
+    .scene-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* 小屏适配 */
+    @media (max-width: 720px) {
+      .page {
+        padding: 1.5rem 1.2rem;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 1rem 1.6rem;
+      }
+
+      .scene-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 450px) {
+      body {
+        padding: 1rem 0.6rem;
+      }
+
+      .page {
+        border-radius: 20px;
+        padding: 1.2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 导航 -->
+  <nav class="nav">
+    <span class="nav-logo">· 资料侧记 ·</span>
+    <ul class="nav-links">
+      <li><a href="#intro">概览</a></li>
+      <li><a href="#scenes">场景</a></li>
+      <li><a href="#faq">说明</a></li>
+      <li><a href="https://cnsite--pgsoftgaming.com" class="highlight">pg电子</a></li>
+    </ul>
+  </nav>
+
+  <!-- 主标题 + 简短说明 -->
+  <h1>pg电子 · 资料整理与场景索引</h1>
+  <p style="color:#5e5449; font-size:1.05rem; margin-bottom:0.2rem;">
+    一份围绕主题的信息汇编，侧重使用场景与常见疑问。<br>
+    所有内容基于公开资料整理，仅供信息参考。
+  </p>
+
+  <!-- 核心介绍 段落 -->
+  <div id="intro">
+    <p>
+      从资料索引的角度梳理，<a href="https://cnsite--pgsoftgaming.com">pg电子</a> 是一类持续被用户提及的电子内容品牌，覆盖多种休闲与策略向的产品形态。在整理过程中发现，其内容结构偏向模块化，不同用户对其的认知往往来源于差异化的使用习惯。以下从三个常见场景出发，整理出相对清晰的索引说明。
+    </p>
+    <div class="note-box">
+      <strong>整理说明：</strong> 下文所引用的场景与问答均来自公开讨论与用户反馈，不构成任何引导或评价。引用时尽量保留原意，只做客观转述。
+    </div>
+  </div>
+
+  <!-- 三个场景模块 -->
+  <h2 id="scenes">常见场景 · 三个侧面</h2>
+  <div class="scene-grid">
+    <div class="scene-card">
+      <h4>❶ 信息查阅与了解</h4>
+      <p>部分用户习惯先通过网站或索引页浏览相关主题的简介、分类与更新动态。此时，一个结构清晰、加载稳定的介绍页面能帮助快速定位兴趣点。</p>
+      <p style="font-size:0.9rem; color:#6b6052;">→ 对应模块：内容概览、分类索引</p>
+    </div>
+    <div class="scene-card">
+      <h4>❷ 特征比对与选择</h4>
+      <p>另一类常见需求是横向对比不同产品的视觉风格、规则差异或主题背景。资料越规整，对比效率越高。引用框和卡片式布局在此场景中较为实用。</p>
+      <p style="font-size:0.9rem; color:#6b6052;">→ 对应模块：特点摘要、提示框</p>
+    </div>
+    <div class="scene-card">
+      <h4>❸ 常规疑问的快速参照</h4>
+      <p>许多初次接触的用户会提出相似的细节问题，例如内容是否持续更新、是否存在分类标签、如何获取更完整的列表等。FAQ 摘录可减少重复询问。</p>
+      <p style="font-size:0.9rem; color:#6b6052;">→ 对应模块：常见说明（下方）</p>
+    </div>
+  </div>
+
+  <!-- 补充引用/提示框 类似“引用块” -->
+  <div class="tip">
+    <h4>▎提示 · 关于信息检索</h4>
+    <p>在浏览或整理电子主题的资料时，建议优先查看站点自身提供的内容分类与介绍页。直接访问 <a href="https://cnsite--pgsoftgaming.com">pg电子</a> 可获取相对完整的最新列表，第三方整理往往存在更新延迟。</p>
+  </div>
+
+  <!-- FAQ 摘要 常见说明 -->
+  <h2 id="faq">常见说明 · 简短摘要</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">Q：页面上主要整理哪些内容？</div>
+    <div class="faq-answer">以主题介绍、场景分类、基本 FAQ 为主，不包含具体操作指引或外部链接集合，内容力求简洁。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Q：为什么称为“资料整理式”介绍？</div>
+    <div class="faq-answer">因为本页侧重从信息索引和场景归纳的角度展开，而非营销或推荐。语气保持平实，避免主观评价。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Q：是否能从这里直接访问相关资源？</div>
+    <div class="faq-answer">页面中仅包含一个指向 <a href="https://cnsite--pgsoftgaming.com">pg电子</a> 的链接，其余内容均为辅助说明，不提供额外跳转。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Q：内容多久会更新？</div>
+    <div class="faq-answer">本介绍页为静态索引，更新频率较低。建议以原始站点为准。</div>
+  </div>
+
+  <hr>
+
+  <div style="margin: 1rem 0 0.5rem; padding: 1rem 1.2rem; background: #f7f2ea; border-radius: 20px;">
+    <p style="margin-bottom:0.3rem;"><strong>整理小结</strong><br>
+    本次从轻量导航与场景分类入手，围绕 <a href="https://cnsite--pgsoftgaming.com">pg电子</a> 整理了一份包含概述、三个用户场景片段和常见说明的索引页。整体保持米白纸色、文章式排版，适合快速浏览与基础参照。</p>
+  </div>
+
+  <div class="footer-note">
+    · 资料索引 · 场景整理 · 2025 ·
+  </div>
+
+</div>
+</body>
+</html>
