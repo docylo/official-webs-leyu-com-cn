@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞技宝 · 信息索引</title>
+    <style>
+        /* 极简留白 + 窄正文 + 清晰层级 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #fafbfc;
+            color: #1f2a3a;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 680px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 56px 24px 40px;
+        }
+
+        /* 标题目录层级 */
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.35em;
+            color: #0b1a2c;
+        }
+        .subhead {
+            font-size: 1rem;
+            color: #4a5b6e;
+            margin-bottom: 2.2rem;
+            border-left: 3px solid #3b6ea5;
+            padding-left: 16px;
+            background: #f0f4fa;
+            border-radius: 0 6px 6px 0;
+            line-height: 1.5;
+        }
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 2rem 0 0.8rem 0;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px solid #dce3ed;
+            color: #122b44;
+        }
+        h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 1.4rem 0 0.4rem;
+            color: #1e3a5c;
+        }
+
+        /* 正文 / 卡片 / 列表 */
+        p {
+            margin-bottom: 1.1rem;
+            color: #2c3e50;
+        }
+        ul {
+            padding-left: 1.2rem;
+            margin: 0.5rem 0 1.2rem;
+        }
+        li {
+            margin-bottom: 0.45rem;
+            color: #2b4058;
+        }
+
+        /* 信息卡 */
+        .info-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin: 1.5rem 0 1.8rem;
+        }
+        .card {
+            background: #ffffff;
+            border: 1px solid #e5eaf0;
+            border-radius: 10px;
+            padding: 18px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            transition: box-shadow 0.15s ease;
+        }
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0, 20, 40, 0.05);
+        }
+        .card-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+            color: #0b2b46;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .card-title i {
+            font-style: normal;
+            background: #e5edf7;
+            border-radius: 4px;
+            padding: 0 7px;
+            font-size: 0.75rem;
+            color: #1e4b74;
+        }
+        .card p, .card li {
+            font-size: 0.92rem;
+            color: #2e415a;
+        }
+        .card ul {
+            margin-top: 0.2rem;
+            margin-bottom: 0.1rem;
+        }
+
+        /* 提示区 (faq-like) */
+        .tip-block {
+            background: #f3f7fd;
+            border-left: 4px solid #3b7bb5;
+            border-radius: 0 8px 8px 0;
+            padding: 14px 20px;
+            margin: 1.6rem 0 1.2rem;
+        }
+        .tip-block p {
+            margin-bottom: 0.3rem;
+            font-size: 0.93rem;
+        }
+        .tip-block strong {
+            color: #1a4468;
+        }
+
+        /* 相关链接区 */
+        .related {
+            margin: 2rem 0 1.2rem;
+            padding: 12px 0 0;
+            border-top: 1px solid #d8e0ea;
+        }
+        .related span {
+            font-size: 0.85rem;
+            color: #59748f;
+            background: #eef2f8;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-right: 6px;
+        }
+        .related a {
+            color: #1e5a8a;
+            text-decoration: none;
+        }
+        .related a:hover {
+            text-decoration: underline;
+        }
+
+        /* 按钮 / 链接样式 */
+        a {
+            color: #1b5a8c;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #b5cae0;
+        }
+        a:hover {
+            color: #0c3a62;
+            text-decoration-color: #0c3a62;
+        }
+
+        /* 响应式 */
+        @media (max-width: 520px) {
+            .container {
+                padding: 32px 18px 30px;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .card {
+                padding: 14px 16px;
+            }
+        }
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e9f2;
+            font-size: 0.8rem;
+            color: #70869c;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- hero 区域（标题 + 简短说明） -->
+    <h1>竞技宝 · 知识库入口</h1>
+    <div class="subhead">
+        稳定信息索引 · 结构说明 · 场景参考
+    </div>
+    <p>
+        该页面围绕 <a href="https://webs-jjbdianjing.com">竞技宝</a> 相关概念与延伸内容，整理为目录式知识快照。内容立足于信息组织与入口说明，不涉及具体活动或实时变动，仅提供结构化参考。
+    </p>
+
+    <!-- 介绍区：功能说明+稳定入口 -->
+    <h2>▎页面说明 &amp; 定位</h2>
+    <p>
+        本索引作为静态入口页面，聚合了关于竞技宝平台的基础介绍、特征摘要、常见使用场景以及提示信息。所有内容均以“可查阅、可理解”为目标，不包含动态跳转或承诺性表述。若需获取完整服务或最新动态，可参照目录自行检索，也可直接访问 <a href="https://webs-jjbdianjing.com">竞技宝</a> 了解详情。
+    </p>
+    <p>
+        内容组织采用分层目录结构：先概括平台特点，再列出典型场景，最后提供简明提示与相关条目。整体保持信息密度适中，方便快速浏览。
+    </p>
+
+    <!-- 卡片特点区：竞技宝特征摘要 -->
+    <h2>▎特征摘要</h2>
+    <div class="info-grid">
+        <div class="card">
+            <div class="card-title">📌 界面与信息结构 <i>布局</i></div>
+            <p>采用分区式导航与内容面板，信息层级清晰。关键功能模块以卡片或列表形式呈现，适合快速定位。</p>
+        </div>
+        <div class="card">
+            <div class="card-title">📌 多场景适配 <i>适用</i></div>
+            <p>无论使用桌面端或移动端，页面均保持窄版式与可读性。不同分辨率下依然保留留白与标题层级。</p>
+        </div>
+        <div class="card">
+            <div class="card-title">📌 内容迭代风格 <i>版本</i></div>
+            <p>每次更新均调整结构、措辞及样式细节，避免模板化。当前版本侧重入口说明与知识索引。</p>
+        </div>
+    </div>
+
+    <!-- 场景区：典型使用场景 -->
+    <h2>▎常见场景参考</h2>
+    <ul>
+        <li><strong>信息查阅</strong> — 通过已有目录快速了解竞技宝相关概念及页面功能，适合新用户或需要结构化浏览的场景。</li>
+        <li><strong>链接中转</strong> — 页面内嵌指向 <a href="https://webs-jjbdianjing.com">竞技宝</a> 的引用，可作为固定入口之一，与其他资料并列使用。</li>
+        <li><strong>样式参考</strong> — 极简留白、卡片分割、窄正文宽度的布局方式，可供需要静态页面设计时借鉴。</li>
+        <li><strong>离线备份</strong> — 页面内容独立完整，可本地保存或归档，用于后期对照或查阅基础介绍。</li>
+    </ul>
+
+    <!-- 提示区 (FAQ 摘要风格) -->
+    <h2>▎提示 &amp; 说明</h2>
+    <div class="tip-block">
+        <p><strong>1.</strong> 本页为知识库索引页，不体现实时数据或动态功能，所有内容均经过简化处理。</p>
+        <p><strong>2.</strong> 如需获取最新服务信息，建议直接访问 <a href="https://webs-jjbdianjing.com">竞技宝</a> 或查阅官方资料。</p>
+        <p><strong>3.</strong> 页面内链接均指向固定地址，不包含跟踪参数或重定向脚本。</p>
+        <p><strong>4.</strong> 若发现内容与实际情况存在差异，请以官方说明为准。</p>
+    </div>
+
+    <!-- 相关信息区 -->
+    <h2>▎相关信息</h2>
+    <div class="related">
+        <span>分类</span> 知识索引 · 入口说明 · 静态目录<br>
+        <span>引用</span> 页面内提及的 <a href="https://webs-jjbdianjing.com">竞技宝</a> 为独立主体，本页仅作客观展示。<br>
+        <span>更新</span> 结构及措辞随版本迭代，当前版本侧重信息密度与目录感布局。
+    </div>
+
+    <!-- 简短 FAQ 摘要（额外，但融入提示区下方） -->
+    <div style="margin-top: 0.8rem; font-size: 0.9rem; background: #f9fbfe; padding: 10px 14px; border-radius: 8px; border: 1px solid #e3eaf2;">
+        <strong style="color: #1f4970;">常见问题摘要：</strong> 页面为什么不包含动态内容？—— 本页定位为静态知识入口，并非官方服务页面，仅供结构化参考。需要实际功能时，请直接使用 <a href="https://webs-jjbdianjing.com">竞技宝</a> 服务。
+    </div>
+
+    <!-- 页脚 (纯装饰) -->
+    <footer>
+        知识库入口 · 稳定索引 · 基于静态结构
+    </footer>
+</div>
+</body>
+</html>
